@@ -21,12 +21,7 @@ io.on("connection", function(socket: any) {
         socket.join(dialogId);
         console.log("JOIN", dialogId, socket, http);
     })
-    socket.on('DIALOGS:TYPING', (obj: any) => {
-        socket
-        //.to(obj.dialogId)
-        .emit('DIALOGS:TYPING', obj);
-        console.log(obj);
-    })
+    
     console.log(socket);
     });
 
