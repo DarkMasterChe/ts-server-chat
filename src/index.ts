@@ -12,8 +12,6 @@ import bodyParser from 'body-parser';
 
 import { UserModel } from './schemas';
 
-//import bcrypt from 'bcryptjs';
-
 
 import { createServer } from 'http';
 
@@ -24,31 +22,18 @@ import './core/db';
 import  createRoutes from './core/routes';
 import  createSocket from './core/socket';
 
-
-
-
-
-
 const app = express();
 const http = createServer(app);
 const io = createSocket(http);
 
 dotenv.config();
 
-//console.log(process.env.JWT_SECRET);
+//console.log(process.env.JWT_SECRET); //JWT Token Valid 
 
 
 createRoutes(app, io);
 
-
-
-
-
-
 //const io = socket(server);
-
-
-
 
 /*app.post("/create", (req: express.Request, res: express.Response) => {
     const postData = {
@@ -65,22 +50,13 @@ createRoutes(app, io);
 });*/
 
 
-
-
-
 http.listen(process.env.PORT, () => {
     console.log(`server is running on port ${process.env.PORT}`)
 });
-
-
-
-
 app.get('/', (req: express.Request, res: express.Response) => {
     res.send("CONN");
     
 })
-
-
 io.on('connection', (socket: any) => {
     console.log(socket.id);
 
