@@ -14,6 +14,7 @@ io.on("connection", function(socket: any) {
         socket.join(room_1);
         console.log(room_1);
     })*/
+    //TODO: ROOMS
 
     socket.on("DIALOGS:JOIN", (dialogId: string) => {
         socket.dialogId = dialogId;
