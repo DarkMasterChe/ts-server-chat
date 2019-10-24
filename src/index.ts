@@ -5,7 +5,6 @@ import express from 'express';
 import socket from 'socket.io';
 
 
-
 import mongoose from 'mongoose';
 
 import bodyParser from 'body-parser';
@@ -55,9 +54,7 @@ http.listen(process.env.PORT, () => {
 });
 app.get('/', (req: express.Request, res: express.Response) => {
     res.send("CONN");
-    
 })
 io.on('connection', (socket: any) => {
     console.log(socket.id);
-
 });
