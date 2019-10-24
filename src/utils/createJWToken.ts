@@ -27,6 +27,7 @@ export default (user: any) => {
       expiresIn: process.env.JWT_MAX_AGE,
       algorithm: 'HS256'
   })
+  //RSA Test
 
   return token;
 };
